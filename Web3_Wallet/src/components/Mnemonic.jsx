@@ -3,25 +3,35 @@ import { generateMnemonic } from "bip39";
 import Sol from "./Sol";
 import Eth from "./Eth";
 import "./Mnemonic.scss";
+
 export default function Mnemonic() {
   const [mnemonic, setMnemonic] = useState("");
   const [mnemonicInd, setMnemonicInd] = useState([]);
+
   var tmp = "";
-  for (let i = 0; i < mnemonic.length; i++) {
-    if (mnemonic[i] === " ") {
-      mnemonicInd.push(tmp);
-      tmp = "";
-    } else {
-      tmp += mnemonic[i];
+  const handleMnemonicWords = () => {
+    const mnemonicWords = [];
+    for (let i = 0; i < mnemonic.length; i++) {
+      if (mnemonic[i] === " ") {
+        mnemonicWords.push(tmp);
+        tmp = "";
+      } else {
+        tmp += mnemonic[i];
+      }
     }
-  }
+    setMnemonicInd(mnemonicWords);
+  };
+
+  React.useEffect(() => {
+    handleMnemonicWords();
+  }, [mnemonic]);
+
   return (
     <div className="mnemonic">
       <div className="header">
         <h1>Web3 Wallet</h1>
       </div>
       <div className="button">
-        {" "}
         <button
           disabled={mnemonic !== ""}
           style={{
@@ -38,7 +48,19 @@ export default function Mnemonic() {
           Generate Your Mnemonic
         </button>
       </div>
-      <div className="mnemonicArea" style={{display: mnemonic!==""?"flex":"none"}}>
+      <div
+        className="mnemonicArea"
+        style={{ display: mnemonic !== "" ? "flex" : "none" }}
+      >
+        <button
+          className="close-btn"
+          onClick={() => {
+            setMnemonic("");
+            setMnemonicInd([]);
+          }}
+        >
+          &times;
+        </button>
         {mnemonicInd.map((word, index) => {
           return (
             <div key={index} className="mnemonicWord">
@@ -48,7 +70,10 @@ export default function Mnemonic() {
         })}
       </div>
       {
-        <div className="wallet" >
+        <div
+          className="wallet"
+        
+        >
           <div className="sol">
             <Sol mnemonic={mnemonic} />
           </div>
