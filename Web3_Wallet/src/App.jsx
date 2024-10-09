@@ -1,13 +1,13 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import Mnemonic from "./components/Mnemonic";
 
 function App() {
   return (
     <>
       <div className="App">
-        <h1>Web3 Wallet</h1>
-        <Mnemonic/>
+       
+        <Mnemonic />
       </div>
     </>
   );
