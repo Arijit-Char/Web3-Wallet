@@ -70,10 +70,7 @@ export default function Mnemonic() {
         })}
       </div>
       {
-        <div
-          className="wallet"
-        
-        >
+        <div className="wallet">
           <div className="sol">
             <Sol mnemonic={mnemonic} />
           </div>
