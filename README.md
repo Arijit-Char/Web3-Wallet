@@ -1,5 +1,9 @@
 # Web3 Wallet Generator 🌐
 
+## 🌐 Live Demo
+
+Check out the live application: [Live Demo](https://web3-wallett.netlify.app/)
+
 A powerful Web3 Wallet Generator that allows users to create Ethereum and Solana wallets, generate mnemonic phrases, and view balances in real-time. This project is built with React, utilizing the power of Ethers.js for Ethereum and SolanaWeb3.js for Solana.
 
 ## 🚀 Features
@@ -13,10 +17,6 @@ A powerful Web3 Wallet Generator that allows users to create Ethereum and Solana
 - **Frontend:** React.js, JavaScript, HTML, CSS
 - **Blockchain Libraries:** Ethers.js (Ethereum), SolanaWeb3.js (Solana)
 - **API:** Infura (Ethereum), Solana RPC
-
-## 🌐 Live Demo
-
-Check out the live application: [Live Demo](https://web3-wallett.netlify.app/)
 
 ## 🔧 Getting Started
 
